@@ -22,7 +22,7 @@ export default function Details() {
   console.log(productDetails);
 
   async function getProductDetails() {
-    let res = await fetch(`http://localhost:3001/products/${id}`);
+    let res = await fetch(`http://localhost:3000/products/${id}`);
     let data = await res.json();
 
     setProductDetails(data);
@@ -38,7 +38,7 @@ export default function Details() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3001/products/${id}`, {
+      const res = await fetch(`http://localhost:3000/products/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export default function Details() {
     status,
     date
   ) {
-    const res = await fetch("http://localhost:3001/orders", {
+    const res = await fetch("http://localhost:3000/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

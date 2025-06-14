@@ -138,13 +138,13 @@ export default function Setting() {
           />
         </div>
 
-        {/* <button
+         <button
           type="submit"
           className="px-5 py-2.5 bg-blue-500 text-white rounded-md block ml-auto text-xl cursor-pointer"
         >
           Save Change
-        </button> */}
- <Button>Save</Button>
+        </button> 
+
 
      </form>
     </>

@@ -12,10 +12,10 @@ export default function Footer() {
 
   return (
     <>
-      <div className="text-white  py-3 bg-[#000e1c] mt-14">
+      <div className="bg-[#47352b]  py-3 text-white mt-14">
         <div className="flex sm:flex-col md:flex-row md:flex-wrap lg:flex-nowrap  justify-between items-center max-w-[1800px] mx-auto py-6">
 
-          <div className="bg-[#F3274C] rounded-2xl p-6 font-semibold sm:w-full md:w-1/2 lg:w-fit sm:mb-6 ">
+          <div className="bg-[#fef9c3] text-black rounded-2xl p-6 font-semibold sm:w-full md:w-1/2 lg:w-fit sm:mb-6 ">
             <h2 className="mb-2 italic">GOODFOOD</h2>
             <p className="mb-8">FOOD & RESTAURANT</p>
 
@@ -96,7 +96,7 @@ export default function Footer() {
             <p className="mb-4">Get recent news and updates.</p>
             <input type="email" placeholder="Email Address" className="border border-gray-300 px-7 py-4 rounded-lg mb-4 w-full"/>
             <br />
-            <button className="bg-[#F3274C] text-white px-5 py-3 rounded-lg">Subscribe</button>
+            <button className="bg-[#fef9c3] text-black text-xl px-5 py-3 rounded-lg">Subscribe</button>
           </div>
 
         </div>

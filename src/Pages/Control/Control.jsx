@@ -6,7 +6,7 @@ export default function Control() {
   const [addedProduct, setAddedProduct] = useState();
 
   async function addProduct(image, name, price, description) {
-    const res = await fetch("http://localhost:3001/products", {
+    const res = await fetch("http://localhost:3000/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

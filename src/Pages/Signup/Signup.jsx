@@ -61,7 +61,7 @@ export default function Signup() {
   });
 
   async function addUser(name, email, password, numOfOrders) {
-    let res = await fetch("http://localhost:3001/users", {
+    let res = await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

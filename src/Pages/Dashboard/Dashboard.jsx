@@ -12,7 +12,7 @@ export default function Dashboard() {
   const [packaging, setPackaging] = useState();
   const [showReport, setShowReport] = useState(false);
   async function getMostOrdered() {
-    let res = await fetch("http://localhost:3001/products");
+    let res = await fetch("http://localhost:3000/products");
     let data = await res.json();
     console.log(data);
     let filtered = data.filter((item) =>
@@ -23,7 +23,7 @@ export default function Dashboard() {
   }
 
   async function getHygieneRate() {
-    const res = await fetch("http://localhost:3001/ratings");
+    const res = await fetch("http://localhost:3000/ratings");
     const data = await res.json();
     console.log("hygiene =>", data);
     // console.log("****",data.category["Hygiene"].percentage);
@@ -35,7 +35,7 @@ export default function Dashboard() {
   }
 
   async function getFoodTasteRate() {
-    const res = await fetch("http://localhost:3001/ratings");
+    const res = await fetch("http://localhost:3000/ratings");
     const data = await res.json();
     console.log("hygiene =>", data);
     // console.log("****",data.category["Hygiene"].percentage);
@@ -47,7 +47,7 @@ export default function Dashboard() {
   }
 
   async function getPackagingRate() {
-    const res = await fetch("http://localhost:3001/ratings");
+    const res = await fetch("http://localhost:3000/ratings");
     const data = await res.json();
     console.log("Packaging =>", data);
     // console.log("****",data.category["Hygiene"].percentage);

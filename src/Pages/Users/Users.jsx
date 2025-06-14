@@ -6,7 +6,7 @@ export default function Users() {
   const [users, setUsers] = useState([]);
 
   async function getUsers() {
-    let res = await fetch("http://localhost:3001/users");
+    let res = await fetch("http://localhost:3000/users");
     let data = await res.json();
     console.log(data);
     setUsers(data);

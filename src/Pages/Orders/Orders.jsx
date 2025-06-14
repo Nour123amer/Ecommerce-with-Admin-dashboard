@@ -5,7 +5,7 @@ import { CiMenuFries } from "react-icons/ci";
 export default function Orders() {
   const [orders, setOrders] = useState([]);
   async function getOrders() {
-    let res = await fetch("http://localhost:3001/orders");
+    let res = await fetch("http://localhost:3000/orders");
     let data = await res.json();
     console.log(data);
     setOrders(data);

@@ -7,7 +7,7 @@ export const FeedbackContext = createContext();
 export function FeedbackContextProvider({ children }) {
   const [reviews, setReviews] = useState([]);
   async function getReviews() {
-    let res = await fetch("http://localhost:3001/reviews");
+    let res = await fetch("http://localhost:3000/reviews");
     let data = await res.json();
     setReviews(data);
   }

@@ -8,7 +8,7 @@ export default function Profile() {
   const [users, setUsers] = useState([]);
 
   async function getUsers() {
-    let res = await fetch("http://localhost:3001/users");
+    let res = await fetch("http://localhost:3000/users");
     let data = await res.json();
     console.log(data);
     setUsers(data);
@@ -28,7 +28,7 @@ export default function Profile() {
   const currentUserId = users.find((u) => u.email === currentUser.email);
   localStorage.setItem("useData", JSON.stringify(currentUserId));
   async function updateUser(name, phone, address, role, email) {
-    const res = await fetch(`http://localhost:3001/users/${currentUserId.id}`, {
+    const res = await fetch(`http://localhost:3000/users/${currentUserId.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

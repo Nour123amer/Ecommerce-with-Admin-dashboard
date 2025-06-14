@@ -23,12 +23,30 @@ export default function Layout() {
   return (
     <>
       <div
-        className={` ${
+        className={`bg-center bg-no-repeat bg-cover  w-screen h-screen ${
           isPathHome
-            ? `bg-[url('https://i.pinimg.com/736x/8e/53/c7/8e53c7f79c28df97acfa550a1b575ed0.jpg')] bg-center ${themeColor} bg-no-repeat bg-cover  w-screen h-screen text-white`
-            : "text-gray-950  "
+            ? `  text-white`
+            : "text-gray-950 bg-transparent "
         }`}
+         style={
+         
+         isPathHome ? {
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/ymGrNvtr/Chat-GPT-Image-Jun-15-2025-12-51-14-AM.png')`,
+  }:{}}
       >
+       {/* <div
+      className={`w-screen min-h-screen bg-cover bg-no-repeat bg-center ${
+        isPathHome ? "text-white" : "bg-white text-gray-950"
+      }`}
+      style={
+        isPathHome
+          ? {
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/ymGrNvtr/Chat-GPT-Image-Jun-15-2025-12-51-14-AM.png')`,
+            }
+          : {}
+      }
+    > */}
+    
         <Navbar
           className={!isPathHome ? "!bg-gray-600" : ""}
           isHome={isPathHome}

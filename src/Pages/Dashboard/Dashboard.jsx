@@ -11,6 +11,7 @@ export default function Dashboard() {
   const [fastFood, setFastFood] = useState();
   const [packaging, setPackaging] = useState();
   const [showReport, setShowReport] = useState(false);
+  const [weekRevenu ,setWeekRevenu]= useState(null);
   async function getMostOrdered() {
     let res = await fetch("http://localhost:3000/products");
     let data = await res.json();
@@ -34,11 +35,25 @@ export default function Dashboard() {
     setHygiene(filtered);
   }
 
+  async function getWeekRevenu() {
+     const res = await fetch("http://localhost:3000/revenueData");
+    const data = await res.json();
+    let filtered = data.map((item) =>
+      item.day === "06" ? (((item.thisWeek)/(item.lastWeek)).toFixed(2)): ""
+    );
+    console.log(filtered);
+    setWeekRevenu(filtered);
+    
+  }
+
+  useEffect(()=>{
+    getWeekRevenu();
+  },[])
+
   async function getFoodTasteRate() {
     const res = await fetch("http://localhost:3000/ratings");
     const data = await res.json();
     console.log("hygiene =>", data);
-    // console.log("****",data.category["Hygiene"].percentage);
     let filtered = data.map((item) =>
       item.category === "Food Taste" ? item.percentage : ""
     );
@@ -87,10 +102,10 @@ export default function Dashboard() {
         <div className=" h-[calc(100%-50px)]">
           <div className="flex h-[60%]">
             <div className="p-5 w-[65%]  border-r-2 border-gray-400 h-full border-b-2">
-              <h3 className="text-[16px]"> Revenue</h3>
-              <p className="text-[16px]">IDR</p>
-              <p className="text-[16px]"> vs last week</p>
-              <p className="mb-8 text-[16px]"> Sales from </p>
+              <h3 className="text-[16px] text-xl"> Revenue</h3>
+              <p className="text-[16px] text-xl"><span className="text-gray-500">{weekRevenu}</span> IDR</p>
+              <p className="text-[16px] text-xl"> vs last week</p>
+              <p className="mb-8 text-[16px] text-xl text-gray-500"> Sales from 1-12 may 2025</p>
 
               <ColumnGraph className=" h-[80%] " />
               <ul className=" flex gap-5 items-center text-[#121212] pl-16">
@@ -108,7 +123,7 @@ export default function Dashboard() {
             </div>
             <div className="p-5 w-[35%]   border-gray-400 h-full border-b-2 ">
               <h2>Order Time</h2>
-              <p className=""> From</p>
+              <p className="text-gray-500"> From 1-6 May 2025</p>
 
               <PieChartGraph />
 

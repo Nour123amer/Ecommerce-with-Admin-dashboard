@@ -44,6 +44,9 @@ import AddProduct from "./Pages/AddProduct/AddProduct";
 import UpdateProduct from "./Pages/UpdateProduct/UpdateProduct";
 import DeleteProduct from "./Pages/DeleteProduct/DeleteProduct";
 import ControlLayout from "./Layouts/ControlLayout/ControlLayout";
+import { NumberOfItemsContextProvider } from "./contexts/NumberOfOrders";
+import { OrderContextProvider } from "./contexts/OrdersContext";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -159,6 +162,7 @@ function App() {
         { path: "menu", element: <Menu /> },
         { path: "team", element: <Team /> },
         { path: "cart", element: <Cart /> },
+        {path:"Confirmation" ,element : <Confirmation />},
         { path: "productsSale", element: <ProductsSale /> },
         { path: "desserts", element: <Desserts /> },
         { path: "signup", element: <Signup /> },
@@ -245,7 +249,11 @@ function App() {
                     <SettingContextProvider>
                       <ThemeContextProvider>
                         <ThemeColorContextProvider>
-                           <RouterProvider router={paths}></RouterProvider> 
+                            <OrderContextProvider>
+                              <NumberOfItemsContextProvider>
+                             <RouterProvider router={paths}></RouterProvider> 
+                              </NumberOfItemsContextProvider> 
+                            </OrderContextProvider>
                         </ThemeColorContextProvider>
                       </ThemeContextProvider>
                     </SettingContextProvider>

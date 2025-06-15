@@ -3,11 +3,15 @@ import { FaCartShopping } from "react-icons/fa6";
 import { useContext, useEffect } from 'react';
 import { CounterContext } from '../../../contexts/CounterContext';
 import { SettingContext } from '../../../contexts/SettingContext';
+import { ProductCountContext } from '../../../contexts/ProductCountContext';
+import { NumberOfItemsContext } from '../../../contexts/NumberOfOrders';
 
 
 export default function Navbar({ isHome }) {
   const {siteName ,setSiteName ,logo ,setLogo} = useContext(SettingContext);
   const {counter} = useContext(CounterContext);
+    const { productCount ,setProductCount } = useContext(ProductCountContext);
+      const {numberOfItems } = useContext(NumberOfItemsContext);
 
   useEffect(()=>{
     setSiteName(JSON.parse(localStorage.getItem("siteName")));
@@ -32,7 +36,7 @@ export default function Navbar({ isHome }) {
         <li> <NavLink to="/signup" >Signup</NavLink></li>
         <li> <NavLink to="/cart" className="relative" >
         <FaCartShopping className='text-4xl' />
-         <span className='absolute flex justify-center items-center -top-6 left-4 w-[30px] h-[30px] rounded-full border-4 border-dotted border-white'>{counter}</span>
+         <span className='absolute flex justify-center items-center -top-6 left-4 w-[30px] h-[30px] rounded-full border-4 border-dotted border-white'>{productCount + numberOfItems}</span>
          </NavLink></li>
 
          <li><NavLink to="/profile" >  <img

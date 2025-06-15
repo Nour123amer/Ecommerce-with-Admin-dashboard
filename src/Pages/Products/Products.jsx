@@ -24,10 +24,20 @@ export default function Products() {
   }
 
 
-  function deleteProduct(id){
-    let filtered = [...products].filter((product)=>product.id !== id);
+ async function deleteProduct(id){
+
+  try{
+    let res = await fetch(`http://localhost:3000/products/${id}`,{
+      method:"DELETE",
+    })
+        let filtered = [...products].filter((product)=>product.id !== id);
     setProducts(filtered);
     toast.success("Product deleted from the menu successfully!")
+    setProducts(data);
+  }catch(error){
+    toast.error("Delete product failed!");
+  }
+
   }
   
 

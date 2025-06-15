@@ -105,7 +105,7 @@ export default function AddProduct() {
             e.preventDefault();
           }}
           type="submit"
-          className="bg-green-600 text-white rounded-md px-4 py-2 mx-4 text-xl mt-3 mx-2 cursor-pointer"
+          className="bg-green-600 text-white rounded-md px-4 py-2 mx-4 text-xl mt-3  cursor-pointer"
         >
           Add Product
         </button>

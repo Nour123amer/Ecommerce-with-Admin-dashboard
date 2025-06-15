@@ -8,13 +8,15 @@ import { CartContext } from "../../contexts/CartContext";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { ProductCountContext } from "./../../contexts/ProductCountContext";
 import toast from "react-hot-toast";
+import { NumberOfItemsContext } from "../../contexts/NumberOfOrders";
 
 export default function Details() {
   const [productDetails, setProductDetails] = useState();
   const { renderedStars } = useContext(ProductRateContext);
   const { counter, setCounter } = useContext(CounterContext);
   const { cartItems, setCartItems } = useContext(CartContext);
-  const { productCount, setProductCount } = useContext(ProductCountContext);
+  const { productCount } = useContext(ProductCountContext);
+  const {numberOfItems ,setNumberOfItems} = useContext(NumberOfItemsContext);
 
   const { fontSize, mealColor, borderRaduis } = useContext(ProductStyleContext);
 
@@ -99,11 +101,12 @@ export default function Details() {
   console.log("cart items ==>", cartItems);
 
   const increaseOrder = () => {
-    setProductCount((prev) => prev + 1);
+    setNumberOfItems((prev) => prev + 1);
+    console.log( "prduct count ==> ", productCount)
   };
 
   const decreaseOrder = () => {
-    setProductCount((prev) => prev - 1);
+    setNumberOfItems((prev) => prev - 1);
   };
 
   return (
@@ -142,7 +145,7 @@ export default function Details() {
               onChange={handleChange}
             />
             <br />
-            <label className="p-2" htmlFor="">
+            <label className="px-4" htmlFor="">
               Product Price :
             </label>
             <input
@@ -156,7 +159,7 @@ export default function Details() {
             <br />
 
             <div className="flex gap-2 items-center">
-              <span className="p-2" htmlFor="">
+              <span className="px-4" htmlFor="">
                 Product Rate :
               </span>
 
@@ -174,7 +177,7 @@ export default function Details() {
                   e.preventDefault();
                   const newCounter = counter + 1;
                   setCounter(newCounter);
-                  setCartItems([...cartItems, productDetails]);
+                  setCartItems([...cartItems, {...productDetails ,quantity:numberOfItems}]);
                   console.log(productDetails.price);
                   console.log("counter ==>", counter);
                   try {
@@ -199,7 +202,7 @@ export default function Details() {
                     decreaseOrder();
                   }}
                 />
-                <span>{productCount}</span>
+                <span>{numberOfItems}</span>
 
                 <FaPlus
                   onClick={() => {

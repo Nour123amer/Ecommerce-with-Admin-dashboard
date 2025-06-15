@@ -1,12 +1,14 @@
 import { MdRestaurantMenu } from "react-icons/md";
 import { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Products() {
   let { products ,setProducts} = useContext(ProductContext);
   const [isOpen ,setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const toggleDropdown =() =>{
     setIsOpen(!isOpen);
   }
@@ -19,6 +21,13 @@ export default function Products() {
     function filterByName(){
     let filtered = [...products].sort((a,b)=> a.name.localeCompare(b.name));
     setProducts(filtered);
+  }
+
+
+  function deleteProduct(id){
+    let filtered = [...products].filter((product)=>product.id !== id);
+    setProducts(filtered);
+    toast.success("Product deleted from the menu successfully!")
   }
   
 
@@ -56,8 +65,7 @@ export default function Products() {
             <th className="w-1/10 p-6">quantity</th>
             <th className="w-1/10 p-6">Sale</th>
             <th className="w-1/10 p-6">Image</th>
-            <th className="w-1/10 p-6">Product Details</th>
-            <th className="w-1/10 p-6" >Update</th>
+            <th className="w-1/10 p-6">Update</th>
             <th className="w-1/10 p-6">Delete</th>
            
           </tr>
@@ -75,21 +83,18 @@ export default function Products() {
                   <td className="w-1/10 text-center p-4"><img src={product.image} className=" h-[120px] w-full" alt="" /></td>
                   <td className="w-1/10 text-center p-4 ">
                     <Link
-                      className="text-white bg-blue-400 hover:border-0 px-2 py-1 rounded-md"
+                      className="text-white  bg-amber-400 hover:border-0 px-2.5 py-1.5 text-lg rounded-md"
                       to={`/dashboard/products/${product.id}`}
                     >
-                      {" "}
-                      Product Details
+                      
+                      Update
                     </Link>
                   </td>
-                  <td className="w-1/10 text-center p-4 ">
-                    <button 
-                    className="text-white bg-amber-400 hover:border-0 px-2 py-1 rounded-md">
-                      Update
-                    </button>
-                  </td>
+                
                   <td className="w-1/10 text-center p-4">
-                    <button className="text-white bg-red-600 hover:border-0 px-2 py-1 rounded-md">
+                    <button 
+                    onClick={()=>{deleteProduct(product.id)}}
+                    className="text-white bg-red-600 hover:border-0 px-2.5 py-1.5 text-lg rounded-md">
                       Delete
                     </button>
                   </td>

@@ -34,11 +34,11 @@ export default function Users() {
         <tbody>
           {users
             ? users.map((user) => (
-                <tr className="p-6 border-b-2 border-gray-200">
+                <tr className={` p-6 border-b-2 border-gray-200  ${user.role === "Admin" ? "text-red-600" : ""} `}>
                   <td className="w-1/4 text-center p-4">{user.id}</td>
                   <td className="w-1/4 text-center p-4">{user.name}</td>
                   <td className="w-1/4 text-center p-4">{user.email}</td>
-                  <td className="w-1/4 text-center p-4">{user.role}</td>
+                  <td className={`w-1/4 text-center p-4  `}>{user.role}</td>
                 </tr>
               ))
             : ""}

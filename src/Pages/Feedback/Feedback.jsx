@@ -20,7 +20,8 @@ export default function Feedback() {
               <div className=" shadow-md rounded-lg lg:col-span-3 p-6 w-full max-w-md mx-auto border border-gray-100">
                <h2 className="mb-4">{review.comment}</h2>
                <p className="mb-4">{review.date}</p>
-               <p className="mb-4 flex gap-1"> {renderedStars(reviews.rating)}</p>
+               <p className="mb-4 flex gap-1"> {renderedStars(review.rating)}</p>
+
               </div>
             ))
           : "Loading..."}

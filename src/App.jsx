@@ -40,6 +40,10 @@ import { ProductCountContextProvider } from "./contexts/ProductCountContext";
 import { SettingContextProvider } from "./contexts/SettingContext";
 import { ThemeContextProvider } from "./contexts/ThemeContext";
 import { ThemeColorContextProvider } from "./contexts/ThemeColorContext";
+import AddProduct from "./Pages/AddProduct/AddProduct";
+import UpdateProduct from "./Pages/UpdateProduct/UpdateProduct";
+import DeleteProduct from "./Pages/DeleteProduct/DeleteProduct";
+import ControlLayout from "./Layouts/ControlLayout/ControlLayout";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -179,7 +183,14 @@ function App() {
         { path: "products/:id", element: <ProductDetails /> },
         { path: "orders", element: <Orders /> },
         { path: "users", element: <Users /> },
-        { path: "control", element: <Control /> },
+        { path: "control", element: <ControlLayout />,
+          children: [
+            {index: true, element: <AddProduct /> },
+            {path: "addproduct", element: <AddProduct /> },
+            { path: "updateproduct", element: <UpdateProduct /> },
+            { path: "deleteproduct", element: <DeleteProduct /> },
+          ]
+         },
         { path: "feedback", element: <Feedback /> },
         { path: "dashboard", element: <Dashboard /> },
         { path: "setting", element: <Setting /> },

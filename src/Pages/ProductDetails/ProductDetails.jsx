@@ -230,7 +230,7 @@ export default function ProductDetails() {
             Number of products in each row :
           </h2>
 
-          <div className="flex justify-between items-center mb-14 w-1/2">
+          <div className="flex  items-center mb-14 gap-3">
             <p
               onClick={() => {
                 setNumOfProductsInRow(1);

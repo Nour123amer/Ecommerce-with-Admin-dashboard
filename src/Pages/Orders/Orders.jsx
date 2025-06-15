@@ -40,20 +40,22 @@ export default function Orders() {
                 <td className="w-1/7 text-center p-4">{order.id}</td>
                 <td className="w-1/7 text-center p-4">{order.userId}</td>
                 <td className="w-1/7 text-center p-4 ">
-                  {/* {order.products.map((p) => ( */}
+                  {order?.products?.map((p) => (
                   <>
                     <p>
                       <span className="text-blue-500">ProductId :</span>{" "}
-                      {order.productId}
+                      {p.productId}
                     </p>
                     <p>
                       <span className="text-blue-500">Product Quantity :</span>{" "}
-                      {order.quantity}
+                      {p.quantity}
                     </p>
                   </>
-                  {/* ))} */}
+                   ))} 
                 </td>
-                <td className="w-1/7 text-center p-4">{order.quantity}</td>
+                <td className="w-1/7 text-center p-4">
+                {order.products?.reduce((acc,item) => acc + item.quantity , 0)}
+                </td>
                 <td className="w-1/7 text-center p-4">{order.total}</td>
                 <td
                   className={`${

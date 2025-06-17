@@ -42,8 +42,7 @@ export default function About() {
                 <p>{review.numOfOrders}</p>
                 <p className="mb-3">{review.comment}</p>
                 <p className="mb-4 flex gap-1">
-                  {" "}
-                  {renderedStars(reviews.rating)}
+                 {renderedStars(review.rating)}
                 </p>
                 <p>{review.date}</p>
               </div>

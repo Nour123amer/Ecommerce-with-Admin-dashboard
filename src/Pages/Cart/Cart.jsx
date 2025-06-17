@@ -1,17 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { CounterContext } from "../../contexts/CounterContext";
-import Confirmation from "../../components/Confirmation/Confirmation";
-import { useState } from "react";
-import { NumberOfItemsContext } from "../../contexts/NumberOfOrders";
 import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const { cartItems, setCartItems } = useContext(CartContext);
   const { counter, setCounter } = useContext(CounterContext);
   const navigate = useNavigate();
-  
-  
 
   function cancelOrder(id) {
     const filteredItems = cartItems.filter((item) => item.id !== id);
@@ -19,13 +14,20 @@ export default function Cart() {
     setCounter(counter - 1);
   }
 
-  const total = cartItems?.reduce((acc,item)=> acc + item.price * item.quantity ,0);
-  console.log("totaaaaal => " ,total)
+  const total = cartItems?.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+  console.log("totaaaaal => ", total);
+  console.log("Cart Items =>", cartItems);
+
   return (
     <>
-      {cartItems
-        ? cartItems.map((item) => (
-    
+      {cartItems && cartItems.length > 0 ? (
+        <>
+          {cartItems
+            .filter((item) => item?.name && item?.price && item?.image)
+            .map((item) => (
               <div
                 className="relative flex justify-between items-center mb-6 w-3/4 mx-auto"
                 key={item.id}
@@ -47,22 +49,21 @@ export default function Cart() {
                   </button>
                 </div>
               </div>
-             
-     
-          ))
-        : <div className="text-center p-22 text-black bg-red-200">No items</div>}
+            ))}
 
-         <button
-                    onClick={() => {
-                      navigate("/Confirmation")
-                      setCartItems([])
-                    }}
-                    className="bg-green-600 text-white px-5 py-2 rounded-md font-semibold cursor-pointer block ml-auto"
-                  >
-                    Confirm Order
-                  </button>
-
-                  
+          <button
+            onClick={() => {
+              navigate("/Confirmation");
+              setCartItems([]);
+            }}
+            className="bg-green-600 text-white px-5 py-2 rounded-md font-semibold cursor-pointer block ml-auto"
+          >
+            Confirm Order
+          </button>
+        </>
+      ) : (
+        <div className="text-center p-22 text-black bg-red-200">No items</div>
+      )}
     </>
   );
 }

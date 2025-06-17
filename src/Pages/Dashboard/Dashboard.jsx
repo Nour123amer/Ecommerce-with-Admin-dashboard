@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import LineGraph from "../../components/LineChart/LineChart.jsx";
 import WeeklyReport from "../WeeklyReport/WeeklyReport.jsx";
+import { useContext } from "react";
+import { OrderContext } from "../../contexts/OrdersContext.jsx";
 export default function Dashboard() {
   const [mostOrdered, setMostOrdered] = useState([]);
   const [hygiene, setHygiene] = useState();
@@ -12,6 +14,8 @@ export default function Dashboard() {
   const [packaging, setPackaging] = useState();
   const [showReport, setShowReport] = useState(false);
   const [weekRevenu ,setWeekRevenu]= useState(null);
+    const [revenueData, setRevenueData] = useState([]);
+  const {orders} = useContext(OrderContext);
   async function getMostOrdered() {
     let res = await fetch("http://localhost:3000/products");
     let data = await res.json();
@@ -73,6 +77,18 @@ export default function Dashboard() {
     setPackaging(filtered);
   }
 
+    async function getFoodTasteRate() {
+    try {
+      const res = await fetch("http://localhost:3000/ratings")
+      const data = await res.json()
+      const filtered = data.find((item) => item.category === "Food Taste")
+      setFastFood(filtered?.percentage || 0)
+    } catch (error) {
+      console.error("Error fetching food taste rate:", error)
+    }
+  }
+
+
   useEffect(() => {
     getMostOrdered();
     getHygieneRate();
@@ -80,6 +96,22 @@ export default function Dashboard() {
     getPackagingRate();
   }, []);
 
+
+  const reportData = {
+    revenue: {
+      current:weekRevenu,
+      data: revenueData
+    },
+    ratings: {
+      hygiene,
+      fastFood,
+      packaging
+    },
+    mostOrdered,
+    orders,
+    totalOrders: orders.length,
+    averageRating: ((hygiene + fastFood + packaging) / 3).toFixed(1)
+  }
   return (
     <>
       <div className="h-full">
@@ -95,6 +127,7 @@ export default function Dashboard() {
 
         <WeeklyReport
           isVisible={showReport}
+          data={reportData}
           onClose={() => setShowReport(false)}
         />
 

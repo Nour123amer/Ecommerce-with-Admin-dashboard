@@ -48,7 +48,7 @@ export default function Products() {
                <MdRestaurantMenu className="text-[#B0C3CC] text-[32px]" />
                     Products </h2>
         <div className="dropdown">
-          <div tabIndex={0} role="button" onClick={()=>{toggleDropdown()}} className="btn m-1 bg-blue-200 px-2 py-1 rounded-md ">
+          <div tabIndex={0} role="button" onClick={()=>{toggleDropdown()}} className="btn m-1  bg-blue-200 text-blue-600 text-xl px-4 py-2 rounded-md ">
             Filter By
           </div>
          {isOpen &&  <ul

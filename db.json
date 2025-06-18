@@ -889,613 +889,111 @@
       "date": "2025-05-14"
     },
     {
-      "id": "e8b2",
-      "phone": "01055556666",
-      "productId": "2",
-      "orderQuantity": 1,
-      "totalPrice": "4000",
+      "id": "f387",
+      "name": "Nour",
+      "phone": "0109954488",
+      "address": "Giza elharm",
       "status": "pending",
-      "date": "2025-06-09"
+      "total": 220,
+      "products": [
+        {
+          "productId": "6",
+          "quantity": 1,
+          "price": 60
+        },
+        {
+          "productId": "9",
+          "quantity": 2,
+          "price": 50
+        },
+        {
+          "productId": "10",
+          "quantity": 2,
+          "price": 30
+        }
+      ],
+      "date": "2025-06-18"
     },
     {
-      "id": "1704",
-      "phone": "01055556666",
-      "productId": null,
-      "orderQuantity": 1,
-      "totalPrice": 45000,
+      "id": "7474",
+      "userId": 95,
+      "productId": "6",
+      "numberOfItems": 2,
+      "totalPrice": 120,
       "status": "pending",
-      "date": "2025-06-10"
+      "date": "2025-06-18"
     },
     {
-      "id": "c8b2",
-      "phone": "01055556666",
-      "productId": null,
-      "orderQuantity": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-10"
-    },
-    {
-      "id": "6b07",
-      "phone": "01055556666",
-      "productId": null,
-      "orderQuantity": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-10"
-    },
-    {
-      "id": "08c2",
-      "phone": "01055556666",
-      "productId": null,
-      "orderQuantity": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-10"
-    },
-    {
-      "id": "3e4f",
-      "phone": "01055556666",
-      "productId": null,
-      "orderQuantity": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-10"
-    },
-    {
-      "id": "b4fd",
-      "phone": "01055556666",
-      "productId": "2",
-      "orderQuantity": 1,
-      "totalPrice": "4000",
-      "status": "pending",
-      "date": "2025-06-10"
-    },
-    {
-      "id": "d227",
-      "phone": "01055556666",
-      "productId": null,
-      "orderQuantity": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-11"
-    },
-    {
-      "id": "f25a",
-      "phone": "01055556666",
-      "productId": null,
-      "productCount": 2,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-11"
-    },
-    {
-      "id": "4b8b",
-      "phone": "01077778888",
-      "productId": null,
-      "productCount": 0,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-11"
-    },
-    {
-      "id": "1fe2",
-      "phone": "01077778888",
-      "productId": null,
-      "productCount": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-11"
-    },
-    {
-      "id": "7945",
-      "phone": "01077778888",
-      "productId": null,
-      "productCount": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-11"
-    },
-    {
-      "id": "8f88",
-      "phone": "01077778888",
-      "productId": null,
-      "productCount": 1,
-      "totalPrice": 45000,
-      "status": "pending",
-      "date": "2025-06-11"
-    },
-    {
-      "id": "67fd",
-      "phone": "01077778888",
-      "productId": "2",
-      "productCount": 2,
-      "totalPrice": 8000,
-      "status": "pending",
-      "date": "2025-06-13"
-    },
-    {
-      "id": "f3ad",
-      "phone": "01077778888",
-      "productId": "4",
-      "productCount": 4,
-      "totalPrice": 20000,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "0230",
-      "phone": "01077778888",
-      "productId": "5",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "cc7c",
-      "phone": "01077778888",
-      "productId": "4",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "db86",
-      "phone": "01077778888",
-      "productId": "9",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "7c2d",
-      "phone": "01077778888",
+      "id": "1343",
+      "userId": 95,
       "productId": "10",
-      "productCount": 0,
-      "totalPrice": 0,
+      "numberOfItems": 1,
+      "totalPrice": 30,
       "status": "pending",
-      "date": "2025-06-15"
+      "date": "2025-06-18"
     },
     {
-      "id": "2645",
-      "phone": "01077778888",
-      "productId": "5",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "9317",
-      "name": "Nour",
-      "phone": "0109954488",
-      "address": "Elnozha str12"
-    },
-    {
-      "id": "4ce3",
-      "name": "Usama",
-      "phone": "0109954488",
-      "address": "Elnozha str12"
-    },
-    {
-      "id": "ad9b",
-      "userId": 95,
-      "productId": "9",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "a3a6",
-      "userId": 95,
-      "productId": "8",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "6646",
-      "userId": 95,
-      "productId": "18",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "de28",
-      "name": "Nour",
-      "phone": "0109954478",
-      "address": "cjvlk",
-      "status": "pending",
-      "total": 200000,
-      "quantity": 0
-    },
-    {
-      "id": "8ba8",
-      "userId": 95,
-      "productId": "5",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "59e1",
+      "id": "4c88",
       "userId": 95,
       "productId": "6",
-      "productCount": 0,
-      "totalPrice": 0,
+      "numberOfItems": 2,
+      "totalPrice": 120,
       "status": "pending",
-      "date": "2025-06-15"
+      "date": "2025-06-18"
     },
     {
-      "id": "528e",
-      "name": "Nour",
-      "phone": "0109959488",
-      "address": "Elkorba",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-15"
-    },
-    {
-      "id": "eecb",
-      "userId": 95,
-      "productId": "14",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "7c6d",
-      "name": "Usama",
-      "phone": "0109954488",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-15"
-    },
-    {
-      "id": "942d",
-      "userId": 95,
-      "productId": "8",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-15"
-    },
-    {
-      "id": "e5cf",
-      "name": "Maii",
-      "phone": "0109954488",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-15"
-    },
-    {
-      "id": "d54e",
+      "id": "1484",
       "userId": 95,
       "productId": "6",
-      "productCount": 0,
-      "totalPrice": 0,
+      "numberOfItems": 1,
+      "totalPrice": 60,
       "status": "pending",
-      "date": "2025-06-16"
+      "date": "2025-06-18"
     },
     {
-      "id": "57b8",
-      "name": "Mazen",
-      "phone": "0158447512",
-      "address": "Elkorba",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-16"
-    },
-    {
-      "id": "5045",
-      "userId": 95,
-      "productId": "5",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "0fdd",
-      "userId": 95,
-      "productId": "5",
-      "productCount": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "34b5",
-      "name": "Jicii",
-      "phone": "0109954488",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-16"
-    },
-    {
-      "id": "22e2",
-      "userId": 95,
-      "productId": "4",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "38de",
-      "name": "Nour",
-      "phone": "0109954488",
-      "address": "Gizzza",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-16"
-    },
-    {
-      "id": "cb76",
-      "userId": 95,
-      "productId": "2",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "c0f0",
-      "name": "Maii",
-      "phone": "0158447512",
-      "address": "Elnozha str12",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-16"
-    },
-    {
-      "id": "5183",
-      "userId": 95,
-      "productId": "12",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "d2df",
-      "userId": 95,
-      "productId": "6",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "9d0c",
-      "userId": 95,
-      "productId": "9",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "975b",
-      "userId": 95,
-      "productId": "7",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "ca76",
-      "userId": 95,
-      "productId": "6",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-16"
-    },
-    {
-      "id": "c6d7",
-      "name": "Nour",
-      "phone": "0109954477",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-16"
-    },
-    {
-      "id": "f83f",
-      "userId": 95,
-      "productId": "4",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "7d7e",
-      "userId": 95,
-      "productId": "5",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "9c33",
-      "userId": 95,
-      "productId": "4",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "a5e1",
+      "id": "11e8",
       "userId": 95,
       "productId": "11",
-      "numberOfItems": 0,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "e4d9",
-      "userId": 95,
-      "productId": "4",
       "numberOfItems": 2,
-      "totalPrice": 10000,
+      "totalPrice": 50,
       "status": "pending",
-      "date": "2025-06-17"
+      "date": "2025-06-18"
     },
     {
-      "id": "f03d",
+      "id": "d664",
       "userId": 95,
-      "productId": "9",
-      "numberOfItems": 1,
-      "totalPrice": 50000,
+      "productId": "11",
+      "numberOfItems": 4,
+      "totalPrice": 100,
       "status": "pending",
-      "date": "2025-06-17"
+      "date": "2025-06-18"
     },
     {
-      "id": "27ed",
-      "name": "Saif",
-      "phone": "0109954488",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-17"
-    },
-    {
-      "id": "34da",
+      "id": "d60d",
       "userId": 95,
-      "productId": "13",
+      "productId": "11",
       "numberOfItems": 2,
-      "totalPrice": 120000,
+      "totalPrice": 50,
       "status": "pending",
-      "date": "2025-06-17"
+      "date": "2025-06-18"
     },
     {
-      "id": "b404",
-      "name": "Usama",
-      "phone": "0158447512",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-17"
-    },
-    {
-      "id": "81b3",
+      "id": "b43c",
       "userId": 95,
-      "productId": "9",
-      "numberOfItems": 1,
-      "totalPrice": 50000,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "66dc",
-      "userId": 95,
-      "productId": "7",
+      "productId": "11",
       "numberOfItems": 2,
-      "totalPrice": 140000,
+      "totalPrice": 50,
       "status": "pending",
-      "date": "2025-06-17"
+      "date": "2025-06-18"
     },
     {
-      "id": "b59f",
+      "id": "0d7a",
       "userId": 95,
-      "productId": "5",
+      "productId": "11",
       "numberOfItems": 2,
-      "totalPrice": 100000,
+      "totalPrice": 50,
       "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "ee12",
-      "userId": 95,
-      "productId": "8",
-      "numberOfItems": 1,
-      "totalPrice": 55000,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "8dac",
-      "userId": 95,
-      "productId": "7",
-      "numberOfItems": 1,
-      "totalPrice": 0,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "f6bc",
-      "userId": 95,
-      "productId": "4",
-      "numberOfItems": 1,
-      "totalPrice": 70000,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "f230",
-      "name": "Nour",
-      "phone": "0109954488",
-      "address": "Elkorba",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-17"
-    },
-    {
-      "id": "31a6",
-      "userId": 95,
-      "productId": "5",
-      "numberOfItems": 1,
-      "totalPrice": 50000,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "51f9",
-      "userId": 95,
-      "productId": "6",
-      "numberOfItems": 2,
-      "totalPrice": 120000,
-      "status": "pending",
-      "date": "2025-06-17"
-    },
-    {
-      "id": "15b0",
-      "name": "Nour",
-      "phone": "01122556644",
-      "address": "cairo",
-      "status": "pending",
-      "total": 0,
-      "quantity": 0,
-      "date": "2025-06-17"
+      "date": "2025-06-18"
     }
   ]
 }

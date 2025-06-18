@@ -43,7 +43,8 @@ export default function Products() {
 
   return (
     <>
-      <div className="flex justify-between">
+      <div className="bg-gray-50  px-8 py-6">
+        <div className="flex justify-between ">
         <h2 className='text-2xl mb-8 flex gap-3'>
                <MdRestaurantMenu className="text-[#B0C3CC] text-[32px]" />
                     Products </h2>
@@ -65,9 +66,9 @@ export default function Products() {
         </div>
       </div>
 
-      <table className="w-full">
+      <table className="w-full border-separate border-spacing-y-4">
         <thead>
-          <tr className="p-2 border-b-2 border-gray-200">
+          <tr className="p-2 border-b-2 border-gray-50 bg-white rounded-lg mb-4">
             <th className="w-1/10 p-6">Id</th>
             <th className="w-1/10 p-6">Name</th>
             <th className="w-1/10 p-6">Price</th>
@@ -83,7 +84,7 @@ export default function Products() {
         <tbody className="w-full">
           {products
             ? products.map((product) => (
-                <tr key={product.id} className="p-6 border-b-2 border-gray-200">
+                <tr key={product.id} className="p-6  border-gray-50 bg-white ">
                   <td className="w-1/10 text-center p-4">{product.id}</td>
                   <td className="w-1/10 text-center p-4">{product.name}</td>
                   <td className="w-1/10 text-center p-4">{product.price}</td>
@@ -114,6 +115,7 @@ export default function Products() {
             : ""}
         </tbody>
       </table>
+      </div>
     </>
   );
 }

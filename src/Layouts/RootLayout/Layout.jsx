@@ -34,21 +34,10 @@ export default function Layout() {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/ymGrNvtr/Chat-GPT-Image-Jun-15-2025-12-51-14-AM.png')`,
   }:{}}
       >
-       {/* <div
-      className={`w-screen min-h-screen bg-cover bg-no-repeat bg-center ${
-        isPathHome ? "text-white" : "bg-white text-gray-950"
-      }`}
-      style={
-        isPathHome
-          ? {
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/ymGrNvtr/Chat-GPT-Image-Jun-15-2025-12-51-14-AM.png')`,
-            }
-          : {}
-      }
-    > */}
+   
     
         <Navbar
-          className={!isPathHome ? "!bg-gray-600" : ""}
+          className={!isPathHome ? "bg-[#47352b]" : ""}
           isHome={isPathHome}
         />
         <div className="max-w-[2000px] mx-auto min-h-screen">

@@ -81,7 +81,7 @@ export default function Login() {
       <div className="flex justify-center items-center min-w-screenpn ">
         <div className="bg-[url('https://i.pinimg.com/736x/70/34/99/7034992fa1528ac59db02382f6c70478.jpg')] bg-center  mt-22 bg-no-repeat bg-cover text-white rounded-2xl shadow-xl  w-[800px] h-[550px] mx-auto ">
           <h2 className="text-center text-white py-8 text-2xl">Login</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant="danger" className="text-red-600 bg-red-200 rounded-full w-[80%] px-4 py-3 mx-auto">{error}</Alert>}
           <form
             onSubmit={formik.handleSubmit}
             className=" pt-14 px-6  text-center flex flex-col rounded-2xl "

@@ -1,16 +1,17 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Signup() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
+  const {users} = useContext(UserContext);
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
-  const passwordRef = useRef();
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -28,8 +29,14 @@ export default function Signup() {
       ),
   });
 
+ 
+
   const handleSubmit = async (values) => {
-    // e.preventDefault();
+     const emailExist = users.some((u)=>u.email === values.email);
+    if(emailExist){
+      toast.error("Email already exist");
+      return
+    }
     try {
       localStorage.setItem("email", JSON.stringify(values.email));
       if (
@@ -39,7 +46,7 @@ export default function Signup() {
         setError("");
         navigate("/dashboard");
       } else {
-        addUser(values.name, values.email, values.password, (numOfOrders = 0));
+        addUser(values.name, values.email, values.password);
         localStorage.setItem("curnentUser", JSON.stringify(values));
         navigate("/");
       }
@@ -54,13 +61,13 @@ export default function Signup() {
       name: "",
       email: "",
       password: "",
-      numOfOrders: 0,
+      // numOfOrders: 0,
     },
     validationSchema,
     onSubmit: handleSubmit,
   });
 
-  async function addUser(name, email, password, numOfOrders) {
+  async function addUser(name, email, password) {
     let res = await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
@@ -71,7 +78,7 @@ export default function Signup() {
         email,
         password,
         role: "Customer",
-        numOfOrders,
+        // numOfOrders,
       }),
     });
 

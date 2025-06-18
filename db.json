@@ -85,7 +85,7 @@
       "name": "Kara",
       "role": "Admin",
       "email": "kara@gmail.com",
-      "password": "kara123",
+      "password": "Secure1@pass",
       "numOfOrders": 0
     },
     {
@@ -135,6 +135,41 @@
       "phone": "01125944645",
       "address": "Elkorba",
       "numOfOrders": 0
+    },
+    {
+      "id": "9e18",
+      "name": "Usama",
+      "email": "nouramer295+620@gmail.com",
+      "password": "Secure1@pass",
+      "role": "Customer"
+    },
+    {
+      "id": "6c75",
+      "name": "Nour",
+      "email": "nouramer295@gmail.com",
+      "password": "Secure1@pass",
+      "role": "Customer"
+    },
+    {
+      "id": "35b7",
+      "name": "Nour",
+      "email": "nouramer295@gmail.com",
+      "password": "Secure1@pass",
+      "role": "Customer"
+    },
+    {
+      "id": "d642",
+      "name": "Nour",
+      "email": "nouramer295@gmail.com",
+      "password": "Secure1@pass",
+      "role": "Customer"
+    },
+    {
+      "id": "be01",
+      "name": "Ahmed",
+      "email": "ahmedamer295@gmail.com",
+      "password": "Secure1@pass",
+      "role": "Customer"
     }
   ],
   "products": [

@@ -46,6 +46,7 @@ import DeleteProduct from "./Pages/DeleteProduct/DeleteProduct";
 import ControlLayout from "./Layouts/ControlLayout/ControlLayout";
 import { NumberOfItemsContextProvider } from "./contexts/NumberOfOrders";
 import { OrderContextProvider } from "./contexts/OrdersContext";
+import { UserContextProvider } from "./contexts/UserContext";
 
 
 function App() {
@@ -251,7 +252,9 @@ function App() {
                         <ThemeColorContextProvider>
                             <OrderContextProvider>
                               <NumberOfItemsContextProvider>
-                             <RouterProvider router={paths}></RouterProvider> 
+                                <UserContextProvider>
+                                 <RouterProvider router={paths}></RouterProvider>  
+                                </UserContextProvider>
                               </NumberOfItemsContextProvider> 
                             </OrderContextProvider>
                         </ThemeColorContextProvider>

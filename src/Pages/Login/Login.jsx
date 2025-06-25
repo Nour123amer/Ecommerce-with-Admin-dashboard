@@ -63,8 +63,10 @@ export default function Login() {
         values.email === "grace@gmail.com"
       ) {
         setError("");
+        localStorage.setItem("email",values.email)
         navigate("/dashboard");
       } else {
+        localStorage.setItem("email",values.email)
         navigate("/");
       }
     } catch (error) {

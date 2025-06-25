@@ -4,7 +4,7 @@ export default function Team() {
   return (
     <>
     <h2 className='mb-20 text-4xl text-center '>Meet Our Experts</h2>
-    <div className='flex sm:flex-col sm-flex-wrap md:flex-row  justify-between items-center w-3/4 mx-auto bg-white'>
+    <div className='flex sm:flex-col sm-flex-wrap md:flex-row  justify-between items-center w-3/4 mx-auto '>
 
      <div className='relative mb-[280px] '>
       <img src="https://i.ibb.co/q3SrJScP/chef1-png.png" alt="" />

@@ -20,7 +20,7 @@ export default function Profile() {
 
   const [currentUser, setCurrentUser] = useState();
   useEffect(() => {
-    const user = localStorage.getItem("curnentUser");
+    const user = localStorage.getItem("currentProfileUser");
     console.log(user);
     setCurrentUser(JSON.parse(user));
   }, []);
@@ -91,7 +91,7 @@ export default function Profile() {
             disabled
             onChange={formik.handleChange}
             name="name"
-            className="w-1/5 "
+            className="w-1/5 text-gray-500 "
             type="text"
             value={formik.values?.name}
             placeholder={currentUser?.name}
@@ -104,7 +104,7 @@ export default function Profile() {
           <input
             disabled
             name="email"
-            className="w-1/5 "
+            className="w-1/5 text-gray-500 "
             type="text"
             value={currentUser?.email}
           />
@@ -116,7 +116,7 @@ export default function Profile() {
           <input
             disabled
             onChange={formik.handleChange}
-            className="w-1/5 "
+            className="w-1/5 text-gray-500"
             type="tel"
             name="phone"
             placeholder={formik.values?.phone || "No Phone Number"}
@@ -129,7 +129,7 @@ export default function Profile() {
           <input
             disabled
             name="role"
-            className="w-1/5 "
+            className="w-1/5 text-gray-500"
             type="text"
             value={
               currentUser?.email === "grace@gmail.com" ||
@@ -146,7 +146,7 @@ export default function Profile() {
           <input
             disabled
             onChange={formik.handleChange}
-            className="w-1/5 "
+            className="w-1/5 text-gray-500 "
             name="address"
             type="text"
             value={

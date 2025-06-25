@@ -50,7 +50,7 @@ export default function Signup() {
         navigate("/dashboard")
       } else {
         await addUser(values.name, values.email, values.password)
-        localStorage.setItem("currentUser", JSON.stringify(values))
+        localStorage.setItem("currentProfileUser", JSON.stringify(values))
         toast.success("Account created successfully!")
         navigate("/")
       }

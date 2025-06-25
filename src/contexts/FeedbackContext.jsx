@@ -17,7 +17,7 @@ export function FeedbackContextProvider({ children }) {
   }, []);
 
   return (
-    <FeedbackContext.Provider value={{ reviews }}>
+    <FeedbackContext.Provider value={{ reviews , setReviews}}>
       {children}
     </FeedbackContext.Provider>
   );

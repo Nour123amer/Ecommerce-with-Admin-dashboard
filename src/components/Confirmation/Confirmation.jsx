@@ -1,24 +1,27 @@
-"use client"
+"use client";
 
-import { useFormik } from "formik"
-import * as Yup from "yup"
-import { useContext, useState } from "react"
-import { MdCancel } from "react-icons/md"
-import { OrderContext } from "../../contexts/OrdersContext"
-import toast from "react-hot-toast"
-import { NumberOfItemsContext } from "../../contexts/NumberOfOrders"
-import { CartContext } from "../../contexts/CartContext"
-import { useNavigate } from "react-router-dom"
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useContext, useState } from "react";
+import { MdCancel } from "react-icons/md";
+import { OrderContext } from "../../contexts/OrdersContext";
+import toast from "react-hot-toast";
+import { NumberOfItemsContext } from "../../contexts/NumberOfOrders";
+import { CartContext } from "../../contexts/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Confirmation() {
-  const [isClicked, setIsClicked] = useState(false)
-  const { setOrders } = useContext(OrderContext)
-  const { setNumberOfItems } = useContext(NumberOfItemsContext)
-  const { cartItems, setCartItems } = useContext(CartContext)
-  const navigate = useNavigate()
-  const today = new Date().toISOString().split("T")[0]
+  const [isClicked, setIsClicked] = useState(false);
+  const { setOrders } = useContext(OrderContext);
+  const { setNumberOfItems } = useContext(NumberOfItemsContext);
+  const { cartItems, setCartItems } = useContext(CartContext);
+  const navigate = useNavigate();
+  const today = new Date().toISOString().split("T")[0];
 
-  const total = cartItems?.reduce((acc, item) => acc + item.price * item.quantity, 0)
+  const total = cartItems?.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   async function addOrder(name, phone, address, status, products, total, date) {
     const res = await fetch("http://localhost:3000/orders", {
@@ -37,37 +40,45 @@ export default function Confirmation() {
         })),
         date,
       }),
-    })
+    });
 
-    const data = await res.json()
-    setOrders((prev) => [...prev, data])
-    return data
+    const data = await res.json();
+    setOrders((prev) => [...prev, data]);
+    return data;
   }
 
   const handleSubmit = async (values) => {
     try {
       if (!cartItems || cartItems.length === 0) {
-        toast.error("Your cart is empty!")
-        return
+        toast.error("Your cart is empty!");
+        return;
       }
 
-      await addOrder(values.name, values.phone, values.address, values.status, cartItems, total, today)
+      await addOrder(
+        values.name,
+        values.phone,
+        values.address,
+        values.status,
+        cartItems,
+        total,
+        today
+      );
 
-      toast.success("Order placed successfully!")
+      toast.success("Order placed successfully!");
 
       // Clear cart and reset states
-      setCartItems([])
-      setNumberOfItems(1)
+      setCartItems([]);
+      setNumberOfItems(1);
 
       // Navigate to success page or orders
       setTimeout(() => {
-        navigate("/orders")
-      }, 2000)
+        navigate("/orders");
+      }, 2000);
     } catch (error) {
-      console.log(error)
-      toast.error("Failed to place order")
+      console.log(error);
+      toast.error("Failed to place order");
     }
-  }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -82,10 +93,10 @@ export default function Confirmation() {
       address: Yup.string().required("Address is required"),
     }),
     onSubmit: handleSubmit,
-  })
+  });
 
   if (isClicked) {
-    return null
+    return null;
   }
 
   return (
@@ -95,12 +106,17 @@ export default function Confirmation() {
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
           {cartItems?.map((item) => (
-            <div key={item.id} className="flex justify-between items-center py-2 border-b">
+            <div
+              key={item.id}
+              className="flex justify-between items-center py-2 border-b"
+            >
               <div>
                 <span className="font-semibold">{item.name}</span>
                 <span className="text-gray-600 ml-2">x{item.quantity}</span>
               </div>
-              <span className="font-semibold">${(item.price * item.quantity).toFixed(2)}</span>
+              <span className="font-semibold">
+                ${(item.price * item.quantity).toFixed(2)}
+              </span>
             </div>
           ))}
           <div className="flex justify-between items-center pt-4 text-xl font-bold">
@@ -111,7 +127,9 @@ export default function Confirmation() {
 
         {/* Confirmation Form */}
         <div className="bg-white rounded-lg shadow-md p-6 relative">
-          <h2 className="text-center mb-6 text-2xl font-bold">Order Confirmation</h2>
+          <h2 className="text-center mb-6 text-2xl font-bold">
+            Order Confirmation
+          </h2>
           <MdCancel
             onClick={() => setIsClicked(true)}
             className="absolute top-4 right-4 text-3xl text-gray-500 hover:text-gray-700 cursor-pointer"
@@ -119,7 +137,10 @@ export default function Confirmation() {
 
           <form onSubmit={formik.handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">
+              <label
+                className="block text-sm font-medium text-gray-700 mb-1"
+                htmlFor="name"
+              >
                 Full Name *
               </label>
               <input
@@ -130,11 +151,18 @@ export default function Confirmation() {
                 name="name"
                 placeholder="Enter your full name"
               />
-              {formik.errors.name && <p className="text-red-500 text-sm mt-1">{formik.errors.name}</p>}
+              {formik.errors.name && (
+                <p className="text-red-500 text-sm mt-1">
+                  {formik.errors.name}
+                </p>
+              )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="phone">
+              <label
+                className="block text-sm font-medium text-gray-700 mb-1"
+                htmlFor="phone"
+              >
                 Phone Number *
               </label>
               <input
@@ -145,11 +173,18 @@ export default function Confirmation() {
                 name="phone"
                 placeholder="Enter your phone number"
               />
-              {formik.errors.phone && <p className="text-red-500 text-sm mt-1">{formik.errors.phone}</p>}
+              {formik.errors.phone && (
+                <p className="text-red-500 text-sm mt-1">
+                  {formik.errors.phone}
+                </p>
+              )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="address">
+              <label
+                className="block text-sm font-medium text-gray-700 mb-1"
+                htmlFor="address"
+              >
                 Delivery Address *
               </label>
               <textarea
@@ -160,7 +195,11 @@ export default function Confirmation() {
                 rows="3"
                 placeholder="Enter your complete delivery address"
               />
-              {formik.errors.address && <p className="text-red-500 text-sm mt-1">{formik.errors.address}</p>}
+              {formik.errors.address && (
+                <p className="text-red-500 text-sm mt-1">
+                  {formik.errors.address}
+                </p>
+              )}
             </div>
 
             <button
@@ -173,5 +212,5 @@ export default function Confirmation() {
         </div>
       </div>
     </div>
-  )
+  );
 }

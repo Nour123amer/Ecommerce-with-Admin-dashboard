@@ -14,8 +14,13 @@ export default function ProfileSidebar() {
   const {theme ,setTheme} = useContext(ThemeContext);
   const {themeColor ,setThemeColor} = useContext(ThemeColorContext);
 
+  const changeTheme = ()=>{
+    setTheme(!theme);
+    setThemeColor("bg-black text-white")
+  }
+
     useEffect(() => {
-      const user = localStorage.getItem("curnentUser");
+      const user = localStorage.getItem("currentProfileUser");
       const userDetails = localStorage.getItem("useData");
       console.log("details ", userDetails)
       console.log(user);
@@ -82,7 +87,7 @@ export default function ProfileSidebar() {
                   <div className="flex justify-between items-center px-3 rounded-lg bg-gray-100 py-3 mb-4">
                     <h2 className="text-lg">Theme</h2>
                     <div className="flex gap-4 items-center">
-                      <p onClick={()=>{setTheme(!theme)}}>{theme ? "Light" : "Dark"} </p>
+                      <p onClick={()=>{changeTheme()}}>{theme ? "Light" : "Dark"} </p>
                       <IoIosArrowDropdown className="text-2xl" />
                     </div>
                   </div>

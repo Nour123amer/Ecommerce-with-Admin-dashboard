@@ -47,6 +47,8 @@ import ControlLayout from "./Layouts/ControlLayout/ControlLayout";
 import { NumberOfItemsContextProvider } from "./contexts/NumberOfOrders";
 import { OrderContextProvider } from "./contexts/OrdersContext";
 import { UserContextProvider } from "./contexts/UserContext";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import FeedbackPage from "./Pages/Review/Review";
 
 
 function App() {
@@ -173,6 +175,8 @@ function App() {
           {path:"profilenotification", element: <ProfileNotification />}
         ] },
         { path: "login", element: <Login /> },
+        { path: "feedbackpage", element: <FeedbackPage /> },
+
         { path:"bestSellers" ,element: <BestSellers />},
         { path :"confirmation" ,element: <Confirmation />},
         { path: "*", element: <h2>not found</h2> },
@@ -180,7 +184,7 @@ function App() {
     },
     {
       path: "/dashboard",
-      element: <DashboardLayout />,
+      element: <ProtectedRoute> <DashboardLayout /></ProtectedRoute>,
       children: [
         { index: true, element: <Dashboard /> },
         { path: "Parent", element: <Parent /> },
